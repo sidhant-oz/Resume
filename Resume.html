@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidhant Sathe - Mechanical Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 25px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777, #dc2626);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 45px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+        
+        .name {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #ffffff, #e2e8f0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .title {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #94a3b8;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            font-size: 0.95em;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item::before {
+            content: '●';
+            color: #7c3aed;
+            font-size: 1.2em;
+        }
+        
+        .main-content {
+            padding: 45px 40px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+            position: relative;
+        }
+        
+        .section h2 {
+            color: #1e293b;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-radius: 2px;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 20px;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #db2777, #dc2626);
+            border-radius: 1px;
+        }
+        
+        .objective {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #4f46e5;
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #475569;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .objective::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 3em;
+            color: #e2e8f0;
+            font-family: serif;
+        }
+        
+        .experience-item, .project-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #7c3aed;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #7c3aed;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .date {
+            font-size: 0.9em;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .responsibilities ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 8px;
+            color: #475569;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .responsibilities li::marker {
+            color: #7c3aed;
+        }
+        
+        .education-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .education-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #db2777, #dc2626);
+        }
+        
+        .education-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .degree {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+        
+        .institution {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+        
+        .education-date {
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .grade {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            color: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+        
+        .skill-item span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        
+        .skill-item:hover::before {
+            left: 0;
+        }
+        
+        .skill-item:hover span {
+            color: white;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .language {
+            background: linear-gradient(135deg, #db2777, #dc2626);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .language:hover {
+            transform: translateY(-2px);
+        }
+        
+        .project-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .project-description {
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        .project-description strong {
+            color: #7c3aed;
+            font-weight: 600;
+        }
+        
+        .declaration {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            color: #92400e;
+            line-height: 1.6;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .declaration::before {
+            content: '⚡';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .main-content, .header {
+                padding: 30px 25px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .education-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Sidhant Sathe</h1>
+            <p class="title">Mechanical Engineer & Data Annotation Specialist</p>
+            <div class="contact-info">
+                <div class="contact-item">+91 86689 77866</div>
+                <div class="contact-item">sathesidhant24@gmail.com</div>
+                <div class="contact-item">Ahilya Nagar, Jaitala Road, Nagpur</div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section animate-on-scroll">
+                <h2>Professional Objective</h2>
+                <div class="objective">
+                    A dedicated and versatile Mechanical Engineer with expertise in both traditional engineering and modern AI technologies. Seeking to contribute to an innovative organization where I can leverage my unique combination of mechanical engineering knowledge and data annotation skills to drive technological advancement and operational excellence.
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="job-title">Data Annotator</div>
+                    <div class="company">OZ Sports, Nagpur</div>
+                    <div class="date">Present</div>
+                    <div class="responsibilities">
+                        <strong>Key Responsibilities:</strong>
+                        <ul>
+                            <li>Utilize CVAT (Computer Vision Annotation Tool) for precise frame annotation</li>
+                            <li>Annotate video frames and images to create high-quality training datasets</li>
+                            <li>Support AI model development by providing accurate labeled data</li>
+                            <li>Ensure data quality and consistency in annotation processes</li>
+                            <li>Collaborate with AI development team to understand annotation requirements</li>
+                            <li>Maintain detailed documentation of annotation procedures and standards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">Service Technician</div>
+                    <div class="company">Tata Motors</div>
+                    <div class="date">June 2023 - July 2023</div>
+                    <div class="responsibilities">
+                        <strong>Key Responsibilities:</strong>
+                        <ul>
+                            <li>Performed comprehensive vehicle maintenance and servicing operations</li>
+                            <li>Executed air filter replacements and system diagnostics</li>
+                            <li>Conducted hub greasing and bearing maintenance procedures</li>
+                            <li>Managed diesel filter replacements and fuel system maintenance</li>
+                            <li>Performed fluid changes including engine oil, coolant, and brake fluid</li>
+                            <li>Ensured quality standards and safety protocols in all service operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div>
+                            <div class="degree">Diploma in Mechanical Engineering</div>
+                            <div class="institution">G.H. Raisoni Institute of Engineering and Technology, Nagpur</div>
+                            <div class="education-date">2024</div>
+                        </div>
+                        <div class="grade">76.31%</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div>
+                            <div class="degree">MSCIT Certification</div>
+                            <div class="institution">MSBTE</div>
+                            <div class="education-date">2024</div>
+                        </div>
+                        <div class="grade">90%</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div>
+                            <div class="degree">Secondary School Certificate (SSC)</div>
+                            <div class="institution">Saraswati Shishu Mandir High School, Jaitala, Nagpur</div>
+                            <div class="education-date">2021</div>
+                        </div>
+                        <div class="grade">77%</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><span>Team Leadership & Collaboration</span></div>
+                    <div class="skill-item"><span>Technical Documentation</span></div>
+                    <div class="skill-item"><span>Data Annotation & CVAT</span></div>
+                    <div class="skill-item"><span>AI Model Training Support</span></div>
+                    <div class="skill-item"><span>Quality Assurance</span></div>
+                    <div class="skill-item"><span>Computer Vision Tools</span></div>
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Project Portfolio</h2>
+                <div class="project-item">
+                    <div class="project-title">Air Purification & Humidification System</div>
+                    <div class="project-description">
+                        <strong>Innovation Focus:</strong> Developed an eco-friendly air purification system utilizing water as a natural filter medium to address the growing concern of indoor air pollution.
+                        <br><br>
+                        <strong>Problem Statement:</strong> With WHO reporting 7 million annual deaths due to air pollution and 91% of the global population exposed to contaminated air, this project addresses critical indoor air quality concerns.
+                        <br><br>
+                        <strong>Technical Approach:</strong> Designed and implemented a dual-function system combining air purification and humidification capabilities using water filtration technology, providing a sustainable solution for improved indoor air quality.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Languages</h2>
+                <div class="languages">
+                    <div class="language">Marathi</div>
+                    <div class="language">Hindi</div>
+                    <div class="language">English</div>
+                </div>
+            </section>
+
+            <section class="section animate-on-scroll">
+                <h2>Declaration</h2>
+                <div class="declaration">
+                    I hereby declare that all the information provided in this resume is accurate and complete to the best of my knowledge and belief.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Add smooth animations on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        animateElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
